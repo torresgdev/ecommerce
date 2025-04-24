@@ -17,21 +17,25 @@ export class ProductsController {
     }
 
     @Get()
+    @ApiOperation({ summary: 'Lista todos os produtos' })
     findAll() {
         return this.service.findAll()
     }
 
     @Get(':id')
+    @ApiOperation({ summary: 'lista produtos por id' })
     findOne(@Param('id') id: string) {
         return this.service.findById(+id)
     }
 
     @Put(':id')
+    @ApiOperation({ summary: 'atualiza um produto' })
     update(@Param('id') id:string, @Body() body: UpdateProductDto) {
         return this.service.update(+id, body)
     }
 
     @Delete(':id')
+    @ApiOperation({ summary: 'deleta produtos por id' })
     delete(@Param('id') id:string) {
         return this.service.remove(+id)
     }
