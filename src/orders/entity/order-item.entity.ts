@@ -1,11 +1,11 @@
-import { Entity, PrimaryColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
 import { Product } from "src/products/entity/product.entity";
 import { Order } from "./order.entity";
 
 @Entity() 
 export class OrderItem {
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id: number;
 
     @ManyToOne(()=> Order,(order) =>order.items)
