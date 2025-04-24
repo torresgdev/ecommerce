@@ -41,8 +41,8 @@ Este é um sistema de pedidos desenvolvido com **NestJS**, **PostgreSQL**, **Doc
 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
-cd seu-projeto
+git clone https://https://github.com/torresgdev/ecommerce.git
+cd ecommerce
 ```
 
 2. Suba os containers com Docker
