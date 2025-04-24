@@ -1,0 +1,23 @@
+
+services:
+  db:
+    image: postgres
+    container_name: ecommerce_db
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: ecommerce
+
+  api:
+    build: .
+    container_name: ecommerce_api
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+    command: npm run start:dev
